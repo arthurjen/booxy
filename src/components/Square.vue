@@ -2,15 +2,28 @@
   <section>
     <div id="square"
     v-for="n in 5"
-    :key="n">
+    :key="n"
+    v-on:click="onClick"
+    :class="{ round: rounded }">
     </div>
   </section>
 </template>
 
 <script>
 export default {
-  props: ['amount']
+  data() {
+    return {
+      rounded: false
+    }
+  },
+  props: ['amount'],
+  methods: {
+    onClick() {
+      this.rounded = !this.rounded;
+    }
+  }
 }
+  
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -25,10 +38,17 @@ section {
   height: 100px;
   background: orange;
   margin: 5px 5px;
-  transition:all 0.5s ease;
+  transition:all 1s ease;
 }
 
 #square:hover {
   background: red;
+  transform: scale(1.1);
+  transition:all 1s ease;
 }
+
+.round {
+  border-radius: 50px;
+}
+
 </style>

@@ -1,24 +1,25 @@
 <template>
   <div class="rows">
-      <Square
-      v-for="n in 5"
+      <Row
+      v-for="n in number"
       :key="n"
+      :id="n"
       :amount="number"
       />
   </div>
 </template>
 
 <script>
-import Square from './Square.vue';
+import Row from './Row.vue';
 
 export default {
   data() {
     return {
-      number: '3'
+      number: 3
     }
   },
   components: {
-    Square
+    Row
   }
 }
 </script>

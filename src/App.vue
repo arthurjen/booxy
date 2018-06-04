@@ -1,20 +1,18 @@
 <template>
   <div id="app">
-    <header>
-      <h1>booxy</h1>
-    </header>
+    <h1>booxy</h1>
     <section id="box-container">
-      <GridContainer/>
+      <Boox/>
     </section>
   </div>
 </template>
 
 <script>
-import GridContainer from './components/GridContainer.vue'
+import Boox from './components/Boox'
 
 export default {
   components: {
-    GridContainer
+    Boox
   }
 }
 </script>
@@ -22,10 +20,25 @@ export default {
 <style>
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
+h1 {
+  position: absolute;
+  top: 47%;
+  color: white;
+  font-size: 1em;
+}
+
+#box-container {
+  width: 800px;
+  height: 800px;
+}
+
+
 </style>

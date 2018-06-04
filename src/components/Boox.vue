@@ -33,6 +33,7 @@ export default {
   height: 100%;
   width: 100%;
   background: #0057AC;
+  
 }
 
 .hidden {
@@ -47,14 +48,17 @@ export default {
   0% {
     transform: scale(1);
     opacity: 0;
+    border-radius: 50%;
   }
   50% {
     transform: scale(.9);
     opacity: .5;
+    border-radius: 25%;
   }
   100% {
     transform: scale(1);
     opacity: 1;
+    border-radius: 0%;
   }
 }
 

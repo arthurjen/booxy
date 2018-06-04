@@ -1,34 +1,26 @@
 <template>
-  <div class="boox"
-    @click="clicked = true"
-    :class="[{ hidden: clicked }]"
+  <transition name="bounce">
+    <div class="boox"
+      @click="clicked = true"
+      :class="{ hidden: clicked }"
     >
       <Boox
       v-if="clicked"
       v-for="n in 4"
       :key="n"
       />
-  </div>
+    </div>
+  </transition>
 </template>
 
 <script>
 export default {
   data() {
     return {
-      clicked: false
+      clicked: false,
     }
   },
-  name: 'Boox',
-  methods: {
-    getRandomColor() {
-      var letters = '789ABCDEF';
-      var color = '#';
-      for (var i = 0; i < 6; i++) {
-        color += letters[Math.floor(Math.random() * 16)];
-      }
-      return color;
-}
-  }
+  name: 'Boox'
 }
 </script>
 
@@ -41,10 +33,29 @@ export default {
   height: 100%;
   width: 100%;
   background: #0057AC;
-  transition:all 2s ease;
 }
 
 .hidden {
   background: white;
 }
+
+.bounce-enter-active {
+  animation: bounce-in .5s;
+}
+
+@keyframes bounce-in {
+  0% {
+    transform: scale(1);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(.9);
+    opacity: .5;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
 </style>

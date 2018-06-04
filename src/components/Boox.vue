@@ -18,7 +18,17 @@ export default {
       clicked: false
     }
   },
-  name: 'Boox'
+  name: 'Boox',
+  methods: {
+    getRandomColor() {
+      var letters = '789ABCDEF';
+      var color = '#';
+      for (var i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+      return color;
+}
+  }
 }
 </script>
 
@@ -26,15 +36,12 @@ export default {
 
 .boox {
   display: grid;
-  grid-template: 49% 49% / 49% 49%;
-  grid-gap: 2% 2%;
+  grid-template: 1fr 1fr / 1fr 1fr;
+  grid-gap: 1px 1px;
   height: 100%;
   width: 100%;
-  background: orange;
-  box-sizing: border-box;
-  border: 1px solid white;
+  background: #0057AC;
   transition:all 2s ease;
-  border-radius: 15%;
 }
 
 .hidden {

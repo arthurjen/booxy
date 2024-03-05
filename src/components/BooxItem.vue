@@ -41,38 +41,36 @@
 </template>
 
 <style scoped>
-
-
-.boox {
-  display: grid;
-  grid-template: 1fr 1fr / 1fr 1fr;
-  grid-gap: 1px 1px;
-  height: 100%;
-  width: 100%;
-}
-.hidden {
-  background-color: white;
-}
-.bounce-enter-active {
-  animation: bounce-in .5s;
-}
-
-@keyframes bounce-in {
-  0% {
-    transform: scale(1);
-    opacity: 0;
-    border-radius: 50%;
+  .boox {
+    display: grid;
+    grid-template: 1fr 1fr / 1fr 1fr;
+    grid-gap: 1px 1px;
+    height: 100%;
+    width: 100%;
   }
-  50% {
-    transform: scale(.9);
-    opacity: .5;
-    border-radius: 25%;
+  .hidden {
+    background-color: white;
   }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-    border-radius: 0%;
+  .bounce-enter-active {
+    animation: bounce-in .5s;
   }
-}
+
+  @keyframes bounce-in {
+    0% {
+      transform: scale(1);
+      opacity: 0;
+      border-radius: 50%;
+    }
+    50% {
+      transform: scale(.9);
+      opacity: .5;
+      border-radius: 25%;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+      border-radius: 0%;
+    }
+  }
 
 </style>

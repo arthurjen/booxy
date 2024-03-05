@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import BooxItem from './components/BooxItem.vue'
-const newColor = "rgb(0, 86, 172)";
+  import BooxItem from './components/BooxItem.vue'
+  const newColor = "rgb(0, 86, 172)";
 </script>
 
 <template>
   <main>
-    <h1>booxy</h1>
+    <h1 id="title">booxy</h1>
     <div id="box-container">
       <BooxItem :color="newColor"/>
     </div>
@@ -13,34 +13,18 @@ const newColor = "rgb(0, 86, 172)";
 </template>
 
 <style scoped>
-#box-container {
-  width: 800px;
-  height: 800px;
-}
-header {
-  line-height: 1.5;
-}
+  #title {
+    margin: 50px;
+  }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
+  #box-container {
+    width: 800px;
+    height: 800px;
+  }
 
-@media (min-width: 1024px) {
-  header {
+  main {
     display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
+    justify-content: center;
+    align-items: center;
   }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
 </style>
